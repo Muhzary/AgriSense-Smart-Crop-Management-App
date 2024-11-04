@@ -1,23 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgriSense App</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Management App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>AgriSense - Smart Crop Management</h1>
-    <div class="sensor-data">
-      <h2>Soil Moisture Levels</h2>
-      <p id="moisture-level">Fetching data...</p>
+    <div id="app">
+        <!-- Navigation Bar -->
+        <header>
+            <h1>Smart Crop Management</h1>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#weather">Weather</a></li>
+                    <li><a href="#irrigation">Irrigation</a></li>
+                    <li><a href="#crop-health">Crop Health</a></li>
+                    <li><a href="#task-manager">Task Manager</a></li>
+                    <li><a href="#market-prices">Market Prices</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section">
+                <h2>Dashboard</h2>
+                <p>Welcome to your Smart Crop Management App! Track weather, manage irrigation, monitor crop health, and stay on top of tasks all from this dashboard.</p>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Soil Moisture</h3>
+                        <div id="soil-moisture-display">Loading...</div>
+                    </div>
+                    <div class="card">
+                        <h3>Next Task</h3>
+                        <div id="task-display">Loading tasks...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Section -->
+            <section id="weather" class="section">
+                <h2>Weather Forecast</h2>
+                <div id="weather-info">Loading weather...</div>
+            </section>
+
+            <!-- Irrigation Section -->
+            <section id="irrigation" class="section">
+                <h2>Irrigation Scheduler</h2>
+                <form id="irrigation-form">
+                    <label for="moisture">Current Soil Moisture (%):</label>
+                    <input type="number" id="moisture" name="moisture" required>
+                    <label for="irrigation">Irrigation Needed (liters):</label>
+                    <input type="number" id="irrigation" name="irrigation" required>
+                    <button type="submit">Set Irrigation</button>
+                </form>
+                <div id="irrigation-result"></div>
+            </section>
+
+            <!-- Crop Health Section -->
+            <section id="crop-health" class="section">
+                <h2>Crop Health Monitor</h2>
+                <p>Input crop data and monitor the health of your crops.</p>
+                <form id="crop-health-form">
+                    <label for="crop-name">Crop Name:</label>
+                    <input type="text" id="crop-name" name="crop-name" required>
+                    <label for="health-status">Health Status:</label>
+                    <select id="health-status" name="health-status" required>
+                        <option value="good">Good</option>
+                        <option value="average">Average</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="health-result"></div>
+            </section>
+
+            <!-- Task Manager Section -->
+            <section id="task-manager" class="section">
+                <h2>Task Manager</h2>
+                <form id="task-form">
+                    <label for="task-name">Task Name:</label>
+                    <input type="text" id="task-name" name="task-name" required>
+                    <label for="task-date">Date:</label>
+                    <input type="date" id="task-date" name="task-date" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <div id="task-list"></div>
+            </section>
+
+            <!-- Market Prices Section -->
+            <section id="market-prices" class="section">
+                <h2>Market Prices</h2>
+                <div id="market-prices-info">Fetching market prices...</div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Smart Crop Management App</p>
+        </footer>
     </div>
-    <div class="controls">
-      <button id="start-irrigation">Start Irrigation</button>
-      <button id="stop-irrigation">Stop Irrigation</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
